@@ -6,7 +6,7 @@
       "release_year": 1980,
       "description": "Camp counselors are stalked and murdered by an unknown assailant while trying to reopen a summer camp that was the site of a child's drowning.",
       "image": "./assets/f13-1.jpeg",
-      "watched": false,
+      "watched": true,
       "blood_amount": 0
     },
     {
@@ -60,7 +60,7 @@
       "release_year": 1988,
       "description": "A young girl who possesses the power of telekinesis accidentally causes her father's death after a family dispute at Crystal Lake. Years later, when a doctor tries to exploit her abilities, her power becomes a hellish curse, and she unwittingly unchains the merciless, bloodthirsty Jason Voorhees from his watery grave.",
       "image": "./assets/f13-newblood.jpeg",
-      "watched": true,
+      "watched": false,
       "blood_amount": 0
     },
     {

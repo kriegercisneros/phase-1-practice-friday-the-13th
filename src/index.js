@@ -23,8 +23,12 @@ function renderMovie(movies){
     description.innerText = movies.description;
     img2.src = movies.image;
     blood.innerText = movies.blood_amount;
+}
 //allow user to toggle between watched and unwatched
 //stays the same when user clicks on a different image
+
+//can I get help making this into a seperately called function
+//
     const watchedBtn = document.querySelector('button#watched');
     watchedBtn.addEventListener('click', () => {
         if(watchedBtn.innerText === "Watched"){
@@ -32,11 +36,12 @@ function renderMovie(movies){
         }else{
             watchedBtn.innerText = "Watched";
         };
-
-    updateWatch(movies)
+         // updateWatch(movies)
 });
 
-}
+
+
+
 
 //generates 12 images from our json array at the top of the page
 //allows user to click on each image to see more details displayed in form
