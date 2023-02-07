@@ -6,7 +6,7 @@
       "release_year": 1980,
       "description": "Camp counselors are stalked and murdered by an unknown assailant while trying to reopen a summer camp that was the site of a child's drowning.",
       "image": "./assets/f13-1.jpeg",
-      "watched": true,
+      "watched": false,
       "blood_amount": 0
     },
     {
@@ -51,7 +51,7 @@
       "release_year": 1986,
       "description": "Determined to finish off the infamous killer Jason Voorhees once and for all, Tommy Jarvis and a friend exhume Jason’s corpse in order to cremate him. Things go awry when Jason is instead resurrected, sparking a new chain of ruthlessly brutal murders. Now it’s up to Tommy to stop the dark, devious and demented deaths that he unwittingly brought about.",
       "image": "./assets/f13-jasonlives.jpeg",
-      "watched": false,
+      "watched": true,
       "blood_amount": 0
     },
     {

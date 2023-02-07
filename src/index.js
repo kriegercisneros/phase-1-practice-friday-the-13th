@@ -23,12 +23,14 @@ function renderMovie(movies){
     description.innerText = movies.description;
     img2.src = movies.image;
     blood.innerText = movies.blood_amount;
+    toggleWatched(movies)
 }
 //allow user to toggle between watched and unwatched
 //stays the same when user clicks on a different image
 
 //can I get help making this into a seperately called function
 //
+function toggleWatched(element) {    
     const watchedBtn = document.querySelector('button#watched');
     watchedBtn.addEventListener('click', () => {
         if(watchedBtn.innerText === "Watched"){
@@ -36,10 +38,10 @@ function renderMovie(movies){
         }else{
             watchedBtn.innerText = "Watched";
         };
-         // updateWatch(movies)
+         updateWatch(element)
 });
 
-
+}
 
 
 
@@ -58,6 +60,7 @@ function renderMovie(movies){
     
         img.addEventListener('click', () => {
             renderMovie(item);
+            toggleWatched(item)
         });
     });
  };
