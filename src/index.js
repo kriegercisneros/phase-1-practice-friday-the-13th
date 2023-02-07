@@ -4,7 +4,7 @@ fetch(" http://localhost:3000/movies")
  .then(response => response.json())
  .then(data => {
     createImage(data)
-    renderMovie(data)
+    renderMovie(data[0])
 });
 
 
@@ -27,11 +27,11 @@ function renderMovie(movies){
 //stays the same when user clicks on a different image
     const watchedBtn = document.querySelector('button#watched');
     watchedBtn.addEventListener('click', () => {
-    if(watchedBtn.innerText === "Watched"){
-        watchedBtn.innerText = "Unwatched";
-    }else{
-        watchedBtn.innerText = "Watched";
-    };
+        if(watchedBtn.innerText === "Watched"){
+            watchedBtn.innerText = "Unwatched";
+        }else{
+            watchedBtn.innerText = "Watched";
+        };
 
     updateWatch(movies)
 });
