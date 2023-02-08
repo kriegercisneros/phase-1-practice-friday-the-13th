@@ -14,7 +14,7 @@ const year = document.querySelector('h3#year-released');
 const description = document.querySelector('p#description');
 const watched = document.querySelector('button#watched');
 const img2 = document.querySelector('#detail-image');   
-const blood = document.querySelector('#amount');
+let blood = document.querySelector('#amount');
 
 //this populates the HTML form with the first element in our json array
 function renderMovie(movies){
@@ -68,11 +68,10 @@ function toggleWatched(element) {
  function updateWatch(input){
     const updatedWatchedStatus = !input.watched 
     input.watched = updatedWatchedStatus;
-    // console.log(updatedWatchedStatus);
     fetch(`http://localhost:3000/movies/${input.id}`, {
         method: 'PATCH',
         headers: {
-            'Content-Type': 'application/json'
+            'content-Type': 'application/json'
         },
         body: JSON.stringify({
             watched: updatedWatchedStatus
@@ -80,28 +79,30 @@ function toggleWatched(element) {
     })
     .then(response => response.json())
     .then(data => console.log(data))
+	console.log(input.watched)
 }
 
 
 //event listener for blood form submission 
-const bForm = document.querySelector('#blood-form')
-.addEventListener('submit', handleSubmit);
+const bloodForm = document.querySelector('#blood-form')
 
-//event handler for blood form submission
-function handleSubmit(event){
-    event.preventDefault();
-    let bloodInput = e.target.blood-amount.value
-    pushToAPI(bloodInput);
-}
 
-function pushToAPI(blood){
-    fetch(`http://localhost:3000/movies${blood}`, {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(blood)
-    })
-    .then(res => res.json())
-    .then(data => console.log(data))
+bloodForm.addEventListener('submit', (e) =>{
+	updateBlood(e)
+});
+
+function updateBlood(event){
+	event.preventDefault();
+	const bloodInput = parseInt(event.target['blood-amount'].value);
+	blood.textContent = bloodInput + parseInt(blood.textContent);
+
+	fetch(`http://localhost:3000/movies/${event.id}`, {
+		method: 'PATCH',
+		headers:{
+			'Content-type' : 'application/json'
+		},
+		body: JSON.stringify({blood_amount : blood.textContent})
+	})
+	.then(response => response.json())
+	.then(data => console.log(data))	
 }
